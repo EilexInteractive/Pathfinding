@@ -1,0 +1,9 @@
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\bin\Debug\PathfindingGodot.dll
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\bin\Debug\PathfindingGodot.pdb
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.csproj.AssemblyReference.cache
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.AssemblyInfoInputs.cache
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.AssemblyInfo.cs
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.csproj.CoreCompileInputs.cache
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.dll
+C:\Users\KAMil\Documents\Pathfinding\.mono\temp\obj\Debug\PathfindingGodot.pdb

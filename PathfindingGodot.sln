@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathfindingGodot", "PathfindingGodot.csproj", "{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{DE42E0AD-6A26-4FE3-8BBF-69E9D9BD127F}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
