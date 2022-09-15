@@ -97,6 +97,8 @@ public class Pathfinding : TileMap
                     openList.Insert(0, square);                                     // Add it to first in the list
                 } else 
                 {
+                    // test if using the current G score makes the squares F score lower
+                    // if yes updadte the parent because it means it's a better path
                     if(g + square.H < square.F)
                     {
                         square.G = g;
