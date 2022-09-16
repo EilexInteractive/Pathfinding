@@ -15,6 +15,7 @@ public class Pathfinding : TileMap
     private List<Tile> _AllTiles = new List<Tile>();
 
     private List<Tile> Path = new List<Tile>();
+    private List<Tile> FinalPath = new List<Tile>();
 
     private float timerCount = 0;
     [Export] private float timerMax = 0.3f;
@@ -23,7 +24,10 @@ public class Pathfinding : TileMap
     public override void _Ready()
     {
         base._Ready();
+    }
 
+    public List<Vector2> GetPath()
+    {
         _AllCells = GetUsedCells();
     
 
@@ -58,6 +62,7 @@ public class Pathfinding : TileMap
         var closedList = new List<Tile>();
         int g = 0;
 
+        var startingTile = new Tile(startTile);
         openList.Add(new Tile(startTile));              // Add the start tile to the list as the first item
 
         while(openList.Count > 0)
@@ -65,17 +70,27 @@ public class Pathfinding : TileMap
             // Get the sqaure with the lowest F Score
             var lowest = openList.Min(t => t.F);
             current = openList.First(t => t.F == lowest);
+            
             closedList.Add(current);
             openList.Remove(current);
-
-            // Add tile to the path
-            Path.Add(current);
 
 
             // We have reached the end tile
             if(closedList.FirstOrDefault(t => t.TilePosition.x == endTile.x && t.TilePosition.y == endTile.y) != null)
             {
-                break;
+                var navPath = new List<Vector2>();
+                FinalPath.Insert(0, current);               // Add the end node to the final path
+                bool HasReachedStart = false;
+                while(current != null)
+                {
+                    current = current.Parent;
+                    if(current == null)
+                        break;
+
+                    navPath.Insert(0, MapToWorld(current.TilePosition));
+                }
+                navPath[0] = MapToWorld(startingTile.TilePosition);
+                return navPath;
             }
 
             var walkableSquares = GetWalkableSquares(current);
@@ -109,9 +124,7 @@ public class Pathfinding : TileMap
             }
         }
 
-        
-
-        
+        return default;
     }
 
     public int ComputeHScore(Vector2 tilePos, Vector2 targetPos)
@@ -122,30 +135,6 @@ public class Pathfinding : TileMap
     public override void _Process(float delta)
     {
         base._Process(delta);
-
-        if(runTimer)
-        {
-            timerCount += 1 * delta;
-            if(timerCount > timerMax)
-            {
-                timerCount = 0;
-                if(Path.Count > 0)
-                {
-                    var pos = MapToWorld(Path.First().TilePosition);
-
-                    //GetNode<KinematicBody2D>("/root/Main/NavAgent").Position = pos;
-                    GetNode<Line2D>("/root/Main/Line2D").AddPoint(pos);
-                    Update();
-                    Path.RemoveAt(0);
-                } else 
-                {
-                    GD.Print("You have arrived");
-                }
-            }
-        }
-
-        if(Input.IsActionJustPressed("ui_accept"))
-            runTimer = !runTimer;
 
     }
 
