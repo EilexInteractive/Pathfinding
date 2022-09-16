@@ -53,19 +53,16 @@ public class NavAgent : KinematicBody2D
     {
         var Velocity = new Vector2();
 
-        var currentTile = map.WorldToMap(CurrentTilePos);
-        var nextTile = map.WorldToMap(Path[1]);
-
-        if(nextTile.x > currentTile.x)
+        if(NextPosition.x > CurrentTilePos.x)
             Velocity.x += 1;
 
-        if(nextTile.y > currentTile.y)
+        if(NextPosition.y > CurrentTilePos.y)
             Velocity.y += 1;
 
-        if(nextTile.y < currentTile.y)
+        if(NextPosition.y < CurrentTilePos.y)
             Velocity.y -= 1;
 
-        if(nextTile.x < currentTile.x)
+        if(NextPosition.x < CurrentTilePos.x)
             Velocity.x -= 1;
 
 
